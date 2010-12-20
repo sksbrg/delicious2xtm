@@ -1,4 +1,4 @@
-﻿require 'nokogiri'
+require 'nokogiri'
 
 doc = Nokogiri::HTML(File.open("delicious.htm"))
 cnt = 0
