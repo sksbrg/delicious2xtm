@@ -24,7 +24,7 @@ builder = Nokogiri::XML::Builder.new do |xtm|
 					}
 					
 					xtm.occurrence {
-						xtm.type {
+						xtm.type_ {
 							xtm.topicRef(:href => "#date_added")
 						}
 						xtm.resourceData(:datatype => "http://www.w3.org/2001/XMLSchema#dateTime") {
@@ -33,7 +33,7 @@ builder = Nokogiri::XML::Builder.new do |xtm|
 					}
 					
 					xtm.occurrence {
-						xtm.type {
+						xtm.type_ {
 							xtm.topicRef(:href => "#url")
 						}
 						xtm.resourceRef(:href => a["href"])
@@ -41,7 +41,7 @@ builder = Nokogiri::XML::Builder.new do |xtm|
 					
 					unless dt.next.nil?
 						xtm.occurrence {
-							xtm.type {
+							xtm.type_ {
 								xtm.topicRef(:href => "#description")
 							}
 							xtm.resourceData dt.next.inner_html
@@ -62,19 +62,19 @@ builder = Nokogiri::XML::Builder.new do |xtm|
 						}
 						
 						xtm.association {
-							xtm.type {
+							xtm.type_ {
 								xtm.topicRef(:href => "#tag-bookmark")
 							}
 							
 							xtm.role {
-								xtm.type {
+								xtm.type_ {
 									xtm.topicRef(:href => "#tag")
 								}
 								xtm.topicRef(:href => "#tag_" + tag_cnt.to_s)
 							}
 							
 							xtm.role {
-								xtm.type {
+								xtm.type_ {
 									xtm.topicRef(:href => "#bookmark")
 								}
 								xtm.topicRef(:href => "#bookmark_" + cnt.to_s)
